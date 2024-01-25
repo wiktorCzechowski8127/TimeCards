@@ -1,0 +1,174 @@
+2023-12-21 14:03:40,970 ERROR at line 61 employeesYaml readEmployeesFromYaml : Wrong ammount of employee.yaml parameters. Except = 6, accual = 5
+2024-01-17 20:47:52,825 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 20:47:52,840 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 20:47:52,847 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 20:47:52,847 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 20:47:52,889 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 20:47:52,895 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 20:49:02,997 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 20:49:03,015 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 20:49:03,021 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 20:49:03,021 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 20:49:03,059 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 20:49:03,064 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 20:50:17,812 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 20:50:17,827 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 20:50:17,833 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 20:50:17,833 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 20:50:17,869 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 20:50:17,874 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 20:58:37,003 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 20:58:37,018 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 20:58:37,024 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 20:58:37,024 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 20:58:37,059 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 20:58:37,065 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 21:01:54,079 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 21:01:54,094 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 21:01:54,100 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 21:01:54,100 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 21:01:54,135 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 21:01:54,140 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 21:50:50,002 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 21:50:50,016 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 21:50:50,022 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 21:50:50,022 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 21:50:50,058 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 21:50:50,063 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 21:51:11,177 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 21:51:11,192 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 21:51:11,197 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 21:51:11,198 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 21:51:11,233 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 21:51:11,238 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 21:52:15,502 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 21:52:15,517 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 21:52:15,522 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 21:52:15,523 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 21:52:15,558 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 21:52:15,563 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 21:53:26,427 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 21:53:26,442 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 21:53:26,447 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 21:53:26,448 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 21:53:26,485 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 21:53:26,490 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 21:54:14,438 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 21:54:14,452 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 21:54:14,458 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 21:54:14,458 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 21:54:14,493 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 21:54:14,497 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 21:54:57,626 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 21:54:57,641 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 21:54:57,647 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 21:54:57,648 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 21:54:57,683 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 21:54:57,688 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 22:01:30,014 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 22:01:30,029 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 22:01:30,035 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 22:01:30,036 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 22:01:30,071 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 22:01:30,076 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 22:02:53,333 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 22:02:53,348 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 22:02:53,353 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 22:02:53,353 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 22:02:53,388 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 22:02:53,393 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 22:04:42,822 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 22:04:42,842 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 22:04:42,848 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 22:04:42,848 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 22:04:42,885 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 22:04:42,891 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 22:23:15,120 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 22:23:15,135 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 22:23:15,140 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 22:23:15,141 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 22:23:15,175 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 22:23:15,180 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 22:23:39,888 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 22:23:39,903 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 22:23:39,909 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 22:23:39,909 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 22:23:39,945 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 22:23:39,950 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 22:59:50,128 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 22:59:50,143 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 22:59:50,149 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 22:59:50,149 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 22:59:50,185 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 22:59:50,190 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 23:10:22,943 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 23:10:22,959 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 23:10:22,966 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 23:10:22,966 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 23:10:23,006 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 23:10:23,012 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 23:12:04,876 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 23:12:04,894 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 23:12:04,900 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 23:12:04,901 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 23:12:04,951 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 23:12:04,957 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 23:13:46,415 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 23:13:46,432 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 23:13:46,438 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 23:13:46,439 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 23:13:46,482 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 23:13:46,489 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 23:20:24,856 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 23:20:24,870 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 23:20:24,876 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 23:20:24,876 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 23:20:24,912 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 23:20:24,917 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-17 23:38:50,302 DEBUG at line 281 matplotlib wrapper : matplotlib data path: /usr/share/matplotlib/mpl-data
+2024-01-17 23:38:50,317 DEBUG at line 281 matplotlib wrapper : CONFIGDIR=/home/wiktor/.config/matplotlib
+2024-01-17 23:38:50,323 DEBUG at line 1470 matplotlib <module> : interactive is False
+2024-01-17 23:38:50,323 DEBUG at line 1471 matplotlib <module> : platform is linux
+2024-01-17 23:38:50,359 DEBUG at line 281 matplotlib wrapper : CACHEDIR=/home/wiktor/.cache/matplotlib
+2024-01-17 23:38:50,364 DEBUG at line 1629 matplotlib.font_manager _load_fontmanager : Using fontManager instance from /home/wiktor/.cache/matplotlib/fontlist-v330.json
+2024-01-22 22:45:56,658 ERROR at line 66 employees updateEmployeesStatus : Unknown employee working status. Cell: 5 workingStatusValue: z
+2024-01-22 22:52:33,123 ERROR at line 68 employees updateEmployeesStatus : Unknown employee working status. Cell: 5 workingStatusValue: z
+2024-01-22 22:53:19,213 ERROR at line 68 employees updateEmployeesStatus : Unknown employee working status. Cell: 5 workingStatusValue: z
+2024-01-22 22:55:35,028 ERROR at line 68 employees updateEmployeesStatus : Unknown employee working status. Cell: 7 workingStatusValue: l
+2024-01-22 23:00:16,704 ERROR at line 68 employees updateEmployeesStatus : Unknown employee working status. Cell: 5 workingStatusValue: k
+2024-01-22 23:21:14,266 ERROR at line 69 employees updateEmployeesStatus : Unknown employee working status. Cell: 5 workingStatusValue: k
+2024-01-22 23:23:50,836 ERROR at line 67 employees updateEmployeesStatus : Unknown employee working status. Cell: 6 workingStatusValue: k
+2024-01-22 23:27:09,563 ERROR at line 67 employees updateEmployeesStatus : Unknown employee working status. Cell: 3 workingStatusValue: z
+2024-01-23 21:43:24,806 ERROR at line 94 employees updateEmployeesStatus : Ammount of employees cell is None
+2024-01-23 21:43:24,957 ERROR at line 94 employees updateEmployeesStatus : Ammount of employees cell is None
+2024-01-23 21:49:03,491 ERROR at line 94 employees updateEmployeesStatus : Ammount of employees cell is None
+2024-01-23 21:49:03,647 ERROR at line 94 employees updateEmployeesStatus : Ammount of employees cell is None
+2024-01-23 21:49:27,970 ERROR at line 94 employees updateEmployeesStatus : Ammount of employees cell is None
+2024-01-23 21:49:28,158 ERROR at line 94 employees updateEmployeesStatus : Ammount of employees cell is None
+2024-01-23 21:51:30,928 ERROR at line 94 employees updateEmployeesStatus : Ammount of employees cell is None
+2024-01-23 21:51:31,106 ERROR at line 94 employees updateEmployeesStatus : Ammount of employees cell is None
+2024-01-23 21:51:52,770 ERROR at line 94 employees updateEmployeesStatus : Ammount of employees cell is None
+2024-01-23 22:21:44,764 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is'nt the same. cellsReaded: 6 ammountOfWorkingEmployee: 5 len(self.employee): 6
+2024-01-23 22:21:44,910 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is'nt the same. cellsReaded: 6 ammountOfWorkingEmployee: 5 len(self.employee): 6
+2024-01-23 22:25:02,312 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is'nt the same. cellsReaded: 6 ammountOfWorkingEmployee: 5 len(self.employee): 6
+2024-01-23 23:31:10,279 ERROR at line 111 employees updateEmployeesStatus : Readed rows and ammount of employees is'nt the same. cellsReaded: 6 ammountOfWorkingEmployee: 5 len(self.employee): 6
+2024-01-23 23:47:08,657 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 5 len(self.employee): 6
+2024-01-23 23:47:42,523 ERROR at line 114 employees updateEmployeesStatus : Probably problem find in row: 7 hoursValue: None salaryValue: None workingStatusValue: N
+2024-01-23 23:51:09,447 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 5 len(self.employee): 6
+2024-01-23 23:51:14,209 ERROR at line 115 employees updateEmployeesStatus : Probably problem find in row: 7 hoursValue: None salaryValue: None workingStatusValue: N
+2024-01-23 23:52:12,629 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 5 len(self.employee): 6
+2024-01-23 23:52:42,555 ERROR at line 115 employees updateEmployeesStatus : Probably problem find in row: 7 hoursValue: None salaryValue: None workingStatusValue: N
+2024-01-23 23:55:16,612 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 5 len(self.employee): 6
+2024-01-23 23:55:16,614 ERROR at line 115 employees updateEmployeesStatus : Probably problem find in row: 7 hoursValue: None salaryValue: None workingStatusValue: N
+2024-01-23 23:55:16,783 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 5 len(self.employee): 6
+2024-01-23 23:55:16,786 ERROR at line 115 employees updateEmployeesStatus : Probably problem find in row: 7 hoursValue: None salaryValue: None workingStatusValue: N
+2024-01-24 22:20:16,463 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 5 ammountOfWorkingEmployee: 6 len(self.employee): 5
+2024-01-24 22:20:30,874 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 5 ammountOfWorkingEmployee: 6 len(self.employee): 5
+2024-01-24 22:22:06,042 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 7 len(self.employee): 6
+2024-01-24 22:24:16,378 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 7 len(self.employee): 6
+2024-01-24 22:32:06,171 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 7 len(self.employee): 6
+2024-01-24 22:37:59,279 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 7 len(self.employee): 6
+2024-01-24 22:38:01,052 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 7 len(self.employee): 6
+2024-01-24 22:45:51,589 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 7 len(self.employee): 6
+2024-01-24 22:48:22,405 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 7 len(self.employee): 6
+2024-01-24 22:49:59,111 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 7 len(self.employee): 6
