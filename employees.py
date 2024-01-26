@@ -55,7 +55,7 @@ class employeesC:
                         (surnameValue != None) and 
                         (rateValue !=  None) and
                         (workingStatusValue != None)):
-                        tmp = xlsx.workbook[DATA].cell(row=cellRow, column=(TOKEN_ID_COLUMN)).fill.bgColor.index
+                        #tmp = xlsx.workbook[DATA].cell(row=cellRow, column=(TOKEN_ID_COLUMN)).fill.bgColor.index
                         if ((workingStatusValue == 'T') or (workingStatusValue == 'N')):
                             self.employee.append(self.employeeDataC(tokenIdValue, surnameValue, rateValue, workingStatusValue))
                             if (xlsx.workbook[DATA].cell(row=cellRow, column=(TOKEN_ID_COLUMN)).fill.bgColor.index == 'FF993300'):

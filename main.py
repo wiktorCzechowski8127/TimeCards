@@ -7,16 +7,12 @@ import os
 import time
 
 
-def changeFile(exc, now, currentExcelFile, lastModificationTime):   
+def changeFile(employees, exc, now, currentExcelFile):   
     excToCopy = excelSheetC(currentExcelFile)
     excToCopy.create_workbook()
-    employees = employeesC()
-    employees.updateEmployeesStatus(exc)
-    employees.addNewEmployees(exc, now)
-    employees.deleteLayedEmployees()
-    exc.saveSheet()
     excToCopy.generateExcelTemplate(employees, now)
     excToCopy.saveSheet()
+    excToCopy.lastModificationTime = time.ctime(os.path.getmtime(excToCopy.file))
     return excToCopy
 
 def defineMonthAndFile():
@@ -24,57 +20,73 @@ def defineMonthAndFile():
     month = now.month
     file = str(now.month) + "_" + str(now.year) + ".xlsx"
     return(file, month)
-    
-def checkMonthAndFile(currentMonth, exc, now, currentExcelFile, lastModificationTime):
-    #now =  datetime.datetime.now()
-    #now = datetime.datetime(2024, 1, 1)
-    if (now.month != currentMonth):
-        currentExcelFile = str(now.month) + "_" + str(now.year) + ".xlsx"
-        exc = changeFile(exc, now, currentExcelFile, lastModificationTime)
-        currentMonth = now.month
-        ti_m = os.path.getmtime(currentExcelFile)
-        lastModificationTime = time.ctime(ti_m)
-    return exc, currentExcelFile, lastModificationTime, currentMonth
 
-def updateEmployees(exc, now):
-    employees = employeesC()
-    if(employees.updateEmployeesStatus(exc)):
+#employees, exc, now, currentMonth, currentExcelFile, lastModificationTime)
+def checkMonthAndFile(employees, exc, now, currentMonth):
+    isSafeMode = False
+    if (now.month != currentMonth):
+        isSafeMode = True
+        employeesAfterUpdate = employeesC()
+        if(employeesAfterUpdate.updateEmployeesStatus(exc)):
+            employeesAfterUpdate.addNewEmployees(exc, now)
+            employeesAfterUpdate.deleteLayedEmployees()
+            employees = employeesAfterUpdate 
+
+            currentExcelFile = str(now.month) + "_" + str(now.year) + ".xlsx"
+            exc = changeFile(employees, exc, now, currentExcelFile)
+            currentMonth = now.month
+            isSafeMode = False
+    return employees, exc, currentMonth, isSafeMode
+
+def updateEmployees(employees, exc, now):
+    isSafeMode = True
+    employeesAfterUpdate = employeesC()
+    if(employeesAfterUpdate.updateEmployeesStatus(exc)):
     #employees.deleteLayedEmployees()
     #now = datetime.datetime(2024, 2, 1) #TO DO
-        employees.addNewEmployees(exc, now)
+        employeesAfterUpdate.addNewEmployees(exc, now)
+        employees = employeesAfterUpdate
+        isSafeMode = False
     exc.saveSheet()
+    exc.lastModificationTime = time.ctime(os.path.getmtime(exc.file))
+    return employees, exc, isSafeMode
 
 
 
 if __name__=="__main__": 
-
     
     #currentExcelFile = str(now.month) + "_" + str(now.year) + ".xlsx"
     #currentExcelFile, currentMonth = defineMonthAndFile()
     isSafeMode = False
-    lastModificationTime = ''
-    currentExcelFile = '2_2024.xlsx'
-    currentMonth = 2
-    exc = excelSheetC(currentExcelFile)
-    #employees = employeesC()
+    #currentExcelFile = '2_2024.xlsx'
+    now = datetime.datetime(2024, 2, 1)
+    currentMonth = now.month
+    exc = excelSheetC(str(now.month) + "_" + str(now.year) + ".xlsx")
+    employees = employeesC()
     #employees.readEmployeesFromXlsx(exc)
 
     #while
-    now = datetime.datetime(2024, 2, 1)
+
     i = 0
     #updateEmployees(exc, now)
 
     while(True):
-        exc, currentExcelFile, lastModificationTime, currentMonth = \
-            checkMonthAndFile(currentMonth, exc, now, currentExcelFile, lastModificationTime)
-        modificationTimeSample = time.ctime(os.path.getmtime(currentExcelFile))
-        if (lastModificationTime != modificationTimeSample):
-            updateEmployees(exc, now)
-            lastModificationTime = time.ctime(os.path.getmtime(currentExcelFile))
+        employees, exc, currentMonth, isSafeMode = \
+            checkMonthAndFile(employees, exc, now, currentMonth)
+        
+        modificationTimeSample = time.ctime(os.path.getmtime(exc.file))
+        if (exc.lastModificationTime != modificationTimeSample):
+            employees, exc, isSafeMode = updateEmployees(employees, exc, now)
             i += 1
             print(i)
-        
-        if(i == 2):
+
+        if (isSafeMode):
+            print("Safe mode enabled")
+        else:
+            pass
+
+        #to delete   
+        if(i == 3):
             print('month changing')
             now = datetime.datetime(2024, currentMonth + 1, 1)
             i = 0

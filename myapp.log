@@ -172,3 +172,17 @@
 2024-01-24 22:45:51,589 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 7 len(self.employee): 6
 2024-01-24 22:48:22,405 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 7 len(self.employee): 6
 2024-01-24 22:49:59,111 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 7 len(self.employee): 6
+2024-01-26 23:07:09,403 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 6 len(self.employee): 12
+2024-01-26 23:07:09,683 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 6 len(self.employee): 18
+2024-01-26 23:10:54,300 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 6 len(self.employee): 12
+2024-01-26 23:13:42,429 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 6 len(self.employee): 18
+2024-01-26 23:33:49,012 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 5 len(self.employee): 6
+2024-01-26 23:33:49,013 ERROR at line 115 employees updateEmployeesStatus : Probably problem find in row: 7 hoursValue: None salaryValue: None workingStatusValue: N
+2024-01-26 23:34:33,209 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 7 len(self.employee): 6
+2024-01-26 23:34:46,044 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 7 len(self.employee): 6
+2024-01-26 23:34:46,263 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 7 len(self.employee): 6
+2024-01-26 23:35:11,778 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 6 ammountOfWorkingEmployee: 7 len(self.employee): 6
+2024-01-27 00:04:04,338 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 3 ammountOfWorkingEmployee: 4 len(self.employee): 3
+2024-01-27 00:05:40,548 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 4 ammountOfWorkingEmployee: 5 len(self.employee): 4
+2024-01-27 00:06:34,255 ERROR at line 89 employees updateEmployeesStatus : Readed rows and ammount of employees is't the same. cellsReaded: 4 ammountOfWorkingEmployee: 3 len(self.employee): 4
+2024-01-27 00:06:34,257 ERROR at line 115 employees updateEmployeesStatus : Probably problem find in row: 5 hoursValue: None salaryValue: None workingStatusValue: N

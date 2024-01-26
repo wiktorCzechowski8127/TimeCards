@@ -95,6 +95,7 @@ class excelSheetC:
     def __init__(self, filename):
         self.file = filename
         self.isFileInitializeCorrectly = False
+        self.lastModificationTime = ''
    
     def initializeSheet(self):
         self.workbook = load_workbook(filename = self.file)
