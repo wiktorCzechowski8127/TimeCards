@@ -21,6 +21,14 @@ import time
 
 from freeDays import FREEDAYS
 
+import logging
+FORMAT = '%(asctime)s %(levelname)s at line %(lineno)s %(name)s %(funcName)s : %(message)s'
+logging.basicConfig(filename='myapp.log', level=logging.DEBUG, format = FORMAT, force=True)
+del FORMAT
+logger=logging.getLogger(__name__)
+employeeFile = 'employee.yaml'
+
+
 DATA = "Dane"
 HOURS = "Godziny"
 
@@ -44,8 +52,8 @@ WEEKEND_PATTERN = PatternFill(start_color="FFD966",
                                     end_color="FFD966",
                                     fill_type = "solid")
 
-CHRISTMAS_PATTERN = PatternFill(start_color="FFDE00",
-                                end_color="FFDE00",
+CHRISTMAS_PATTERN = PatternFill(start_color="EB8034",
+                                end_color="EB8034",
                                 fill_type = "solid")
 
 GREY_PATTERN = PatternFill(start_color="DBDBDB",
@@ -77,40 +85,37 @@ RIGHT_BORDER = Border(left=Side(style='thin'),
 CENTER = Alignment(horizontal='center')
 
 
-
-#FREEDAYS = [datetime.datetime(1970, 1, 1),
-#            datetime.datetime(1970, 1, 6),
-#            datetime.datetime(1970, 5, 1),
-#            datetime.datetime(1970, 5, 3),
-#            ]
-
-#]
-
-#datetime.datetime.strptime( \
-#                str(date.year) + "-" + str(date.month) + "-" + str(i + 1), "%Y-%m-%d")
 def numberToColumn(number):
     return chr(64 + number)
 
 class excelSheetC:
-    # -> Class declaration >---------------------------------------------------
+    EMPLOYEE_DATA_PATERN = ["Token", "Nazwisko", "Stawka", "Godziny", "Zaliczka",
+                        "Ubezpieczenie", "Wypłata", "Urlop", "Pracuje"]
+    
     def __init__(self, filename):
         self.file = filename
         self.isFileInitializeCorrectly = False
         self.lastModificationTime = ''
    
     def initializeSheet(self):
-        self.workbook = load_workbook(filename = self.file)
+        try:
+            self.workbook = load_workbook(filename = self.file)
+        except:
+            logger.error("Inilization Error. Check is file open correctly")
         self.sheet = self.workbook.active
  
     def saveSheet(self):
-        self.workbook.save(filename=self.file)
+        try:
+            self.workbook.save(filename = self.file)
+        except:
+            logger.error("Saving Error")
         
     def create_workbook(self):
         self.workbook = Workbook()
         self.workbook.create_sheet(DATA)
         self.workbook.create_sheet(HOURS)
         self.workbook.remove(self.workbook['Sheet'])
-        self.workbook.save(self.file)
+        self.saveSheet
     
     def checkFileAndInitialize(self):
         isFileExist = False
@@ -138,8 +143,7 @@ class excelSheetC:
     def checkAndPaintGrey(self, sheet, rowToEdit, columnToEdit, ammountOfColumnsToEdit = 1):
         if ((rowToEdit % 2) == 0):
             self.paintRows(sheet, rowToEdit, columnToEdit, GREY_PATTERN, ammountOfColumnsToEdit)
-
-                
+        
     def isWeekendOrChristmas(self, 
                              date,  
                              sheet, 
@@ -148,13 +152,12 @@ class excelSheetC:
                              ammountOfColumnsToEdit = 1):
         if (date.weekday() > 4):
             self.paintRows(sheet, rowToEdit, columnToEdit, WEEKEND_PATTERN, ammountOfColumnsToEdit)
-        else:
-            for i in FREEDAYS:
-                christmasToCompare = datetime.datetime.strptime(i, "%Y-%m-%d")
-                if (christmasToCompare.date() == date.date()):
-                    self.paintRows(sheet, rowToEdit, columnToEdit, CHRISTMAS_PATTERN, ammountOfColumnsToEdit)
-                elif (christmasToCompare.date() > date.date()):
-                    break
+        for i in FREEDAYS:
+            christmasToCompare = datetime.datetime.strptime(i, "%Y-%m-%d")
+            if (christmasToCompare.date() == date.date()):
+                self.paintRows(sheet, rowToEdit, columnToEdit, CHRISTMAS_PATTERN, ammountOfColumnsToEdit)
+            elif (christmasToCompare.date() > date.date()):
+                break
 
     def generateHoursTemplate(self, employees, date, daysInMonth):
 
@@ -255,8 +258,8 @@ class excelSheetC:
                 self.workbook[DATA].cell(row=rowToEdit, column=columnToEdit).number_format = 'h:mm'
 
         # Adding employees data
-        for i in range(len(self.employeeDataPattern)):
-            self.workbook[DATA].cell(row=1, column=i+1).value = self.employeeDataPattern[i]
+        for i in range(len(self.EMPLOYEE_DATA_PATERN)):
+            self.workbook[DATA].cell(row=1, column=i+1).value = self.EMPLOYEE_DATA_PATERN[i]
             self.workbook[DATA].cell(row=1, column=i+1).border = BORDER
 
         for i in range(employees.ammountOfEmplotees):
@@ -385,8 +388,6 @@ class excelSheetC:
                                       rowToEdit, 
                                       columnToEdit)
             
-
-            
     def updateAmmountOfEmployees(self, ammountOfEmplotees):
         self.workbook[DATA].cell(row=2, column=AMMOUNT_OF_EMPLOYEES_COLUMN).value = ammountOfEmplotees    
             
@@ -394,40 +395,30 @@ class excelSheetC:
         employeeColumn = (2 * (employeeId + 1))
         if (self.workbook[HOURS].cell(row=TITLE_ROW, column=(employeeColumn + 1)).value == id):
             dateRow = currentTime.day + TITLE_ROW
-            print(dateRow)
             columnDate = self.workbook[HOURS].cell(row=dateRow, column=1).value.strftime("%d:%m")
-            #d = currentTime.strftime("%d:%m")
             if (columnDate == currentTime.strftime("%d:%m")):
                 tmp = self.workbook[HOURS].cell(row=dateRow, column=employeeColumn).value
+                
                 if (tmp == None):
+                    print("AddedToRow")
                     self.workbook[HOURS].cell(row=dateRow, column=employeeColumn).value = currentTime
                     self.workbook[HOURS].cell(row=dateRow, column=employeeColumn).number_format = 'h:mm'
 
                     self.workbook[HOURS].cell(row=dateRow, column=(employeeColumn + 1)).value = currentTime
                     self.workbook[HOURS].cell(row=dateRow, column=(employeeColumn + 1)).number_format = 'h:mm'
-                        #str(currentTime.strftime("%H:%M"))
                 else:
+                    print("Added To nest row")
                     self.workbook[HOURS].cell(row=dateRow, column=(employeeColumn + 1)).value = currentTime
-                    #self.workbook[HOURS].cell(row=dateRow, column=(employeeColumn + 1)).value = \
-                        #str(currentTime.strftime("%H:%M"))
-            self.saveSheet()
-            self.lastModificationTime = time.ctime(os.path.getmtime(self.file))
+
+                self.saveSheet()
+                self.lastModificationTime = time.ctime(os.path.getmtime(self.file))
+            else:
+                logger.error("Invalid date in 'HOURS' sheet")
+        else:
+            logger.error("Invalid TokenId in 'HOURS' sheet")
+            
         
     def inputTokenIdToExce(self, id):
-        self.workbook[DATA].cell(row=3, column=WORKING_STATUS_COLUMN).value = id
-        #if (self.workbook[HOURS].cell(row=TITLE_ROW, column=).value ==
-        #    )
-
-
-
-        #self.checkAndPaintGrey(DATA, editedRow, TOKEN_ID_COLUMN, WORKING_STATUS_COLUMN)
-
-
-
-
-
-    employeeDataPattern = ["Token", "Nazwisko", "Stawka", "Godziny", "Zaliczka",
-                           "Ubezpieczenie", "Wypłata", "Urlop", "Pracuje"]
-
-
-
+        self.workbook[DATA].cell(row=4, column=AMMOUNT_OF_EMPLOYEES_COLUMN).value = id
+        self.saveSheet()
+        self.lastModificationTime = time.ctime(os.path.getmtime(self.file))

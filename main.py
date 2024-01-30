@@ -6,6 +6,9 @@ import datetime
 import os
 import time
 
+#from mfrc522 import SimpleMFRC522
+#reader = SimpleMFRC522()
+COOLDOWN_TIME_IN_SEC = 2
 
 def changeFile(employees, exc, now, currentExcelFile):   
     excToCopy = excelSheetC(currentExcelFile)
@@ -25,6 +28,7 @@ def defineMonthAndFile():
 def checkMonthAndFile(employees, exc, now, currentMonth):
     isSafeMode = False
     if (now.month != currentMonth):
+        print("Changing month")
         isSafeMode = True
         employeesAfterUpdate = employeesC()
         if(employeesAfterUpdate.updateEmployeesStatus(exc)):
@@ -39,11 +43,10 @@ def checkMonthAndFile(employees, exc, now, currentMonth):
     return employees, exc, currentMonth, isSafeMode
 
 def updateEmployees(employees, exc, now):
+    print("Updating Employees")
     isSafeMode = True
     employeesAfterUpdate = employeesC()
     if(employeesAfterUpdate.updateEmployeesStatus(exc)):
-    #employees.deleteLayedEmployees()
-    #now = datetime.datetime(2024, 2, 1) #TO DO
         employeesAfterUpdate.addNewEmployees(exc, now)
         employees = employeesAfterUpdate
         isSafeMode = False
@@ -59,7 +62,14 @@ if __name__=="__main__":
     #currentExcelFile, currentMonth = defineMonthAndFile()
     isSafeMode = False
     #currentExcelFile = '2_2024.xlsx'
-    now = datetime.datetime(2024, 2, 1)
+    NOWYEAR = 2024
+    NOWMONTH = 2
+    NOWDAY = 1
+    NOWHOUR = 1
+    NOWMINUTES = 0
+    NOWSECONDS = 0
+    now = datetime.datetime(NOWYEAR, NOWMONTH, NOWDAY, NOWHOUR, NOWMINUTES, NOWSECONDS)
+    lastMinute = 0
     currentMonth = now.month
     exc = excelSheetC(str(now.month) + "_" + str(now.year) + ".xlsx")
     employees = employeesC()
@@ -71,6 +81,7 @@ if __name__=="__main__":
     #updateEmployees(exc, now)
     lastReadedId = 0
     lastReadedTimeStamp = 0
+    coolDown = 0
 
     while(True):
         employees, exc, currentMonth, isSafeMode = \
@@ -79,100 +90,44 @@ if __name__=="__main__":
         modificationTimeSample = time.ctime(os.path.getmtime(exc.file))
         if (exc.lastModificationTime != modificationTimeSample):
             employees, exc, isSafeMode = updateEmployees(employees, exc, now)
-            i += 1
-            print(i)
 
         if (isSafeMode):
             print("Safe mode enabled")
         else:
-            print("RFID running")
-            id = 501 #reader.read_no_block()[0]
-            if ((id != None) and (id != lastReadedId)):
+            readedTokenId = None #int(reader.read_no_block()[0])
+            if ((readedTokenId != None) and (id != lastReadedId)):
                 lastReadedTimeStamp = time.time()
-                lastReadedId = id
-                print("ID: %s" %(id))
-                employeeId = employees.checkReadedId(id)
+                lastReadedId = readedTokenId
+                employeeId = employees.checkReadedId(readedTokenId)
                 if (employeeId != None):
-                    currentTime = datetime.datetime.now()
-                    exc.inputTimestampIntoExcel(id, employeeId, currentTime)
+                    currentTime = now #datetime.datetime.now()
+                    exc.inputTimestampIntoExcel(readedTokenId, employeeId, currentTime)
                 else:
-                    exc.inputTokenIdToExce(id)
-            #os.system('clear')
-            tmp = abs(time.time() - lastReadedTimeStamp)
-            print("LastReadedId: %s recieved %.2f seconds ago" % (hex(lastReadedId),tmp))
-            if (tmp > 2):
+                    exc.inputTokenIdToExce(readedTokenId)
+                print("LastReadedId: %s recieved %.2f seconds ago" % (hex(lastReadedId),coolDown))
+            coolDown = abs(time.time() - lastReadedTimeStamp)
+            if (coolDown > COOLDOWN_TIME_IN_SEC):
                 lastReadedId = 0
 
-        #to delete   
-        if(i == 3):
-            print('month changing')
-            now = datetime.datetime(2024, currentMonth + 1, 1)
-            i = 0
+
+        #To Delete   
+        now2 = datetime.datetime.now()
+        if (NOWMINUTES == 60):
+            NOWMINUTES = 0
+            NOWHOUR += 1
+            if (NOWHOUR == 24):
+                NOWHOUR = 1
+                NOWDAY += 1
+        if(NOWDAY > 27):
+            NOWDAY = 1
+            NOWMONTH += 1
+        
+            if(NOWMONTH > 12):
+                NOWMONTH = 1
+                NOWYEAR +=1
+        now = datetime.datetime(NOWYEAR, NOWMONTH, NOWDAY, NOWHOUR, NOWMINUTES, NOWSECONDS)
+        
+        if(now2.second != lastMinute):
             print(now)
-
-
-#add safe mode
-
-
-
-    '''
-    employees = employeesC()
-    employees.readEmployeesFromYaml()
-    if(employees.isClassFilledCorectly):
-
-        employees.showEmployees()
-
-        now =  datetime.datetime.now()
-        currentExcelFile = str(now.month) + "_" + str(now.year) + ".xlsx"
-        timeSheet = []
-        for i in range (30):
-            timeSheet.append(excelSheetC(currentExcelFile))
-            #timeSheet[i].readEmployeesFromYaml()
-            timeSheet[i].checkFileAndInitialize()
-            timeSheet[i].generateExcelTemplate(employees)
-            timeSheet[i].saveSheet()
-            timeSheet[i].sheet.cell(row=23, column=2).value = 3
-            timeSheet[i].saveSheet()
-            print('dupa')
-            timeSheet[i].initializeSheet()
-            timeSheet[i].sheet.cell(row=23, column=3).value = 4
-            timeSheet[i].saveSheet()
-
-        
-        
-    else:
-        print("Class not filled correclty")
-        
-
-    '''  
-    
-    
-    
-    #employees.addEmployee()
-    #employees.showEmployees()
-    #employees.changeEmployeeName()
-    #employees.changeEmployeeTokenId()
-    #employees.showEmployees()
-    #employees.writeEmployeesToYaml()
-    #print("Program stop running:", int(not(employees.isClassFilledCorectly)))
-            
-
-    #employeeList[i] = employee
-   
-    
-   
-#employee.printclass(employeeList[1])
-#print(employeeList[1])
-#print(tmp['employee(0)'])
-
-#e1 = employee(0, 2137, 'marcin')
-#print(e1.employeeid)
-
-
-        
-        
-        
-    
-
-
-
+            lastMinute = now2.second
+            NOWMINUTES += 1

@@ -7,13 +7,9 @@ Created on Thu Dec 28 20:45:07 2023
 """
 
 
-import logging
+
 from excel import *
-FORMAT = '%(asctime)s %(levelname)s at line %(lineno)s %(name)s %(funcName)s : %(message)s'
-logging.basicConfig(filename='myapp.log', level=logging.DEBUG, format = FORMAT, force=True)
-del FORMAT
-logger=logging.getLogger(__name__)
-employeeFile = 'employee.yaml'
+
 
 
 class employeesC:
@@ -57,23 +53,37 @@ class employeesC:
                         (workingStatusValue != None)):
                         #tmp = xlsx.workbook[DATA].cell(row=cellRow, column=(TOKEN_ID_COLUMN)).fill.bgColor.index
                         if ((workingStatusValue == 'T') or (workingStatusValue == 'N')):
-                            self.employee.append(self.employeeDataC(tokenIdValue, surnameValue, rateValue, workingStatusValue))
+                            
+                            self.employee.append(self.employeeDataC(tokenIdValue, \
+                                                                    surnameValue, \
+                                                                    rateValue, \
+                                                                    workingStatusValue))
+                            
                             if (xlsx.workbook[DATA].cell(row=cellRow, column=(TOKEN_ID_COLUMN)).fill.bgColor.index == 'FF993300'):
                                 xlsx.paintRows(DATA, cellRow, TOKEN_ID_COLUMN, WHITE_PATTERN, WORKING_STATUS_COLUMN)
-                        elif (workingStatusValue == 'Z'):
-                           self.employee.append(self.employeeDataC(tokenIdValue, surnameValue, rateValue, workingStatusValue))
-                           employeesToAdd += 1
+                        
+                        elif(workingStatusValue == 'Z'):
+                            self.employee.append(self.employeeDataC(tokenIdValue, surnameValue, rateValue, workingStatusValue))
+                            employeesToAdd += 1
                         else:
                             notValidCells += 1
                             xlsx.paintRows(DATA, cellRow, TOKEN_ID_COLUMN, RED_PATTERN, WORKING_STATUS_COLUMN)
-                            #logger.error("Unknown employee working status. Cell: " + 
-                            #             str(cellRow) + " workingStatusValue: " + 
-                            #             workingStatusValue)
+                            logger.error("Unknown employee working status. Cell: " + 
+                                         str(cellRow) + " workingStatusValue: " + 
+                                         workingStatusValue)
                             
                         cellsReaded += 1
                         cellRow += 1
+
+                    elif((workingStatusValue == 'Z') and (surnameValue != None)):
+                        self.employee.append(self.employeeDataC(tokenIdValue, surnameValue, rateValue, workingStatusValue))
+                        employeesToAdd += 1
+                        cellsReaded += 1
+                        cellRow += 1
+                  
                     else:
                         isCellFilled = False
+
                 if (notValidCells == 0):
 
                     ammountOfWorkingEmployee = (ammountOfEmploteesValue + employeesToAdd)
@@ -85,14 +95,16 @@ class employeesC:
                         self.ammountOfEmplotees = ammountOfWorkingEmployee
                         print("Employee status update: suscess")
                         self.isClassFilledCorectly = True
+                        
                     else:
                         logger.error("Readed rows and ammount of employees is't the same. "
                                     "cellsReaded: " + str(cellsReaded) +
-                                    " ammountOfWorkingEmployee: " + str(ammountOfWorkingEmployee) +
-                                    " len(self.employee): " + str(len(self.employee)))
+                                    ", ammountOfWorkingEmployee: " + str(ammountOfWorkingEmployee) +
+                                    ", len(self.employee): " + str(len(self.employee)))
 
                         estimatedPotentialProblems = abs(cellsReaded - ammountOfWorkingEmployee)
                         print("Employee status update: Error, estimated potential problems: %d, searching for potential problem..." %(estimatedPotentialProblems))
+                        logger.error("Employee status update: Error, estimated potential problems: %d, searching for potential problem..." %(estimatedPotentialProblems))
                         potentialProblems = 0
 
                         for i in range(cellsReaded):
@@ -129,6 +141,11 @@ class employeesC:
                             
                             elif(workingStatusValue == "Z"):
                                 potentialProblems += 1
+                                logger.error("Probably problem find in row: " + str(rowToEdit) +
+                                             " hoursValue: " + str(hoursValue) +
+                                             " salaryValue: " + str(salaryValue) +
+                                             " workingStatusValue: " + str(workingStatusValue))
+                                
                                 xlsx.paintRows(DATA, rowToEdit, TOKEN_ID_COLUMN, RED_PATTERN, \
                                                WORKING_STATUS_COLUMN)
                                 print("Potential problems find: %d of %d " \
@@ -142,9 +159,23 @@ class employeesC:
                                 valueToInput = "BŁĄD W RZĘDZIE: " + str(rowToEdit) + ", PRAWDOPODOBNIE BŁĘDNY STATUS PRACOWNIKA, ZMIEŃ STATUS NA 'T' LUB 'N'."
                                 xlsx.workbook[DATA].cell(row = rowToPasteError, \
                                     column = SURNAME_COLUMN).value = valueToInput
-                                    
+                                
+                        if (potentialProblems == 0):
+                            
+                            rowToPasteError = TITLE_ROW + \
+                                cellsReaded + \
+                                potentialProblems + \
+                                2
+                            
+                            xlsx.paintRows(DATA, FIRST_DATA_ROW, AMMOUNT_OF_EMPLOYEES_COLUMN, RED_PATTERN)
+                            valueToInput = "PRAWDOPODOBNIE BŁĘDNA ILOŚĆ PRACOWNIKÓW."
+                            xlsx.workbook[DATA].cell(row = rowToPasteError, \
+                                        column = SURNAME_COLUMN).value = valueToInput
+
+
             else:
                 logger.error("Ammount of employees cell is None")
+
         return self.isClassFilledCorectly
             
      
