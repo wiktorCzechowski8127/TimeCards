@@ -18,13 +18,14 @@ def changeFile(employees, exc, now, currentExcelFile):
     excToCopy.lastModificationTime = time.ctime(os.path.getmtime(excToCopy.file))
     return excToCopy
 
+
 def defineMonthAndFile():
     now =  datetime.datetime.now()
     month = now.month
     file = str(now.month) + "_" + str(now.year) + ".xlsx"
     return(file, month)
 
-#employees, exc, now, currentMonth, currentExcelFile, lastModificationTime)
+
 def checkMonthAndFile(employees, exc, now, currentMonth):
     isSafeMode = False
     if (now.month != currentMonth):
@@ -32,14 +33,17 @@ def checkMonthAndFile(employees, exc, now, currentMonth):
         isSafeMode = True
         employeesAfterUpdate = employeesC()
         if(employeesAfterUpdate.updateEmployeesStatus(exc)):
-            employeesAfterUpdate.addNewEmployees(exc, now)
-            employeesAfterUpdate.deleteLayedEmployees()
-            employees = employeesAfterUpdate 
+            if(employeesAfterUpdate.addNewEmployees(exc, now) == 0):
+                employeesAfterUpdate.deleteLayedEmployees()
+                employees = employeesAfterUpdate 
 
-            currentExcelFile = str(now.month) + "_" + str(now.year) + ".xlsx"
-            exc = changeFile(employees, exc, now, currentExcelFile)
-            currentMonth = now.month
-            isSafeMode = False
+                currentExcelFile = str(now.month) + "_" + str(now.year) + ".xlsx"
+                exc = changeFile(employees, exc, now, currentExcelFile)
+                currentMonth = now.month
+                isSafeMode = False
+            else:
+                print("Theres still new employees in sheet.")
+                logger.error("Theres still new employees in sheet.")
     return employees, exc, currentMonth, isSafeMode
 
 def updateEmployees(employees, exc, now):
@@ -55,7 +59,6 @@ def updateEmployees(employees, exc, now):
     return employees, exc, isSafeMode
 
 
-
 if __name__=="__main__": 
     
     #currentExcelFile = str(now.month) + "_" + str(now.year) + ".xlsx"
@@ -63,7 +66,7 @@ if __name__=="__main__":
     isSafeMode = False
     #currentExcelFile = '2_2024.xlsx'
     NOWYEAR = 2024
-    NOWMONTH = 2
+    NOWMONTH = 3
     NOWDAY = 1
     NOWHOUR = 1
     NOWMINUTES = 0
@@ -71,11 +74,19 @@ if __name__=="__main__":
     now = datetime.datetime(NOWYEAR, NOWMONTH, NOWDAY, NOWHOUR, NOWMINUTES, NOWSECONDS)
     lastMinute = 0
     currentMonth = now.month
-    exc = excelSheetC(str(now.month) + "_" + str(now.year) + ".xlsx")
-    employees = employeesC()
-    #employees.readEmployeesFromXlsx(exc)
 
-    #while
+    employees = employeesC()
+    exc = excelSheetC(str(now.month) + "_" + str(now.year) + ".xlsx")
+    exc.checkFileAndInitialize()
+    if(not(exc.isFileInitializeCorrectly)):
+        isSafeMode = True
+
+        excTmp = excelSheetC(str(now.month) + "_" + str(now.year) + "(Template)" + ".xlsx")
+        excTmp.create_workbook()
+        excTmp.generateExcelTemplate(employees, now)
+        excTmp.saveSheet()
+        del(excTmp)
+
 
     i = 0
     #updateEmployees(exc, now)
@@ -84,30 +95,36 @@ if __name__=="__main__":
     coolDown = 0
 
     while(True):
-        employees, exc, currentMonth, isSafeMode = \
-            checkMonthAndFile(employees, exc, now, currentMonth)
-        
-        modificationTimeSample = time.ctime(os.path.getmtime(exc.file))
-        if (exc.lastModificationTime != modificationTimeSample):
-            employees, exc, isSafeMode = updateEmployees(employees, exc, now)
 
-        if (isSafeMode):
-            print("Safe mode enabled")
-        else:
-            readedTokenId = None #int(reader.read_no_block()[0])
-            if ((readedTokenId != None) and (id != lastReadedId)):
-                lastReadedTimeStamp = time.time()
-                lastReadedId = readedTokenId
+        if(os.path.isfile(exc.file)):
+            employees, exc, currentMonth, isSafeMode = \
+                checkMonthAndFile(employees, exc, now, currentMonth)
+            
+            modificationTimeSample = time.ctime(os.path.getmtime(exc.file))
+            if (exc.lastModificationTime != modificationTimeSample):
+                employees, exc, isSafeMode = updateEmployees(employees, exc, now)
+
+
+        readedTokenId = None #reader.read_no_block()[0]
+        if ((readedTokenId != None) and (readedTokenId != lastReadedId)):
+            lastReadedTimeStamp = time.time()
+            lastReadedId = readedTokenId
+
+            currentTime = now #datetime.datetime.now()
+            if (isSafeMode):
+                logger.error("READED TOKENID: " + str(readedTokenId) + " at time: " + str(currentTime))
+            else:
                 employeeId = employees.checkReadedId(readedTokenId)
                 if (employeeId != None):
-                    currentTime = now #datetime.datetime.now()
                     exc.inputTimestampIntoExcel(readedTokenId, employeeId, currentTime)
                 else:
                     exc.inputTokenIdToExce(readedTokenId)
-                print("LastReadedId: %s recieved %.2f seconds ago" % (hex(lastReadedId),coolDown))
-            coolDown = abs(time.time() - lastReadedTimeStamp)
-            if (coolDown > COOLDOWN_TIME_IN_SEC):
-                lastReadedId = 0
+            
+            print("LastReadedId: %d" %lastReadedId)
+        coolDown = abs(time.time() - lastReadedTimeStamp)
+
+        if (coolDown > COOLDOWN_TIME_IN_SEC):
+            lastReadedId = 0
 
 
         #To Delete   
@@ -128,6 +145,6 @@ if __name__=="__main__":
         now = datetime.datetime(NOWYEAR, NOWMONTH, NOWDAY, NOWHOUR, NOWMINUTES, NOWSECONDS)
         
         if(now2.second != lastMinute):
-            print(now)
+            print(str(now) + ' SafeMode: ' + str(isSafeMode))
             lastMinute = now2.second
             NOWMINUTES += 1

@@ -59,14 +59,21 @@ CHRISTMAS_PATTERN = PatternFill(start_color="EB8034",
 GREY_PATTERN = PatternFill(start_color="DBDBDB",
                             end_color="DBDBDB",
                             fill_type = "solid")
+                            #FFC0C0C0
 
 RED_PATTERN = PatternFill(start_color="FF0000",
                             end_color="FF0000",
                             fill_type = "solid")
+                            #
 
 WHITE_PATTERN = PatternFill(start_color='FFFFFF',
                             end_color='FF9933',
                             fill_type = "solid")
+
+ORANGE_PATTERN = PatternFill(start_color='E34829',
+                             end_color='E34829',
+                             fill_type = "solid")
+                            #'FF993300'
 
 BOLDED = Font(name='calibri', bold=True)
 
@@ -123,7 +130,7 @@ class excelSheetC:
             self.initializeSheet()
             isFileExist = True
         else:
-            logger.error("File dosn't exist" + str(self.file))
+            logger.error("File dosn't exist: " + str(self.file))
         self.isFileInitializeCorrectly = isFileExist
 
     def changeFile(self, filename): # TO DO 
@@ -141,8 +148,11 @@ class excelSheetC:
             self.workbook[sheet].cell(row=rowToEdit, column=(columnToEdit + i)).fill = color
 
     def checkAndPaintGrey(self, sheet, rowToEdit, columnToEdit, ammountOfColumnsToEdit = 1):
+        isGreyRow = False
         if ((rowToEdit % 2) == 0):
             self.paintRows(sheet, rowToEdit, columnToEdit, GREY_PATTERN, ammountOfColumnsToEdit)
+            isGreyRow = True
+        return isGreyRow
         
     def isWeekendOrChristmas(self, 
                              date,  
@@ -389,7 +399,8 @@ class excelSheetC:
                                       columnToEdit)
             
     def updateAmmountOfEmployees(self, ammountOfEmplotees):
-        self.workbook[DATA].cell(row=2, column=AMMOUNT_OF_EMPLOYEES_COLUMN).value = ammountOfEmplotees    
+        tmp = self.workbook[DATA].cell(row=2, column=AMMOUNT_OF_EMPLOYEES_COLUMN).value
+        self.workbook[DATA].cell(row=2, column=AMMOUNT_OF_EMPLOYEES_COLUMN).value = tmp + 1    
             
     def inputTimestampIntoExcel(self, id, employeeId, currentTime):
         employeeColumn = (2 * (employeeId + 1))
