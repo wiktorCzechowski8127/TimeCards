@@ -329,7 +329,10 @@ class excelSheetC:
         self.workbook[HOURS].cell(row=TITLE_ROW, column=columnToEditInHoursSheet).border = BORDER
         self.workbook[HOURS].cell(row=TITLE_ROW, column=(columnToEditInHoursSheet + 1)).value = employee.tokenId
         self.workbook[HOURS].cell(row=TITLE_ROW, column=(columnToEditInHoursSheet + 1)).border = RIGHT_BORDER
+        self.workbook[HOURS].cell(row=TITLE_ROW, column=(columnToEditInHoursSheet + 1)).number_format = '0'
 
+        self.workbook[DATA].cell(row=rowToEdit, column=TOKEN_ID_COLUMN).number_format = '0'                
+        
         self.checkAndPaintGrey(DATA, rowToEdit, TOKEN_ID_COLUMN, WORKING_STATUS_COLUMN)
         employeeWorkTimeColumn = numberToColumn(DATE_COLUMN + employeeNumber + 1)
         valueToInput = "=SUM(" + employeeWorkTimeColumn + "2:" + employeeWorkTimeColumn + \
@@ -431,5 +434,6 @@ class excelSheetC:
         
     def inputTokenIdToExce(self, id):
         self.workbook[DATA].cell(row=4, column=AMMOUNT_OF_EMPLOYEES_COLUMN).value = id
+        self.workbook[DATA].cell(row=4, column=AMMOUNT_OF_EMPLOYEES_COLUMN).number_format = '0'
         self.saveSheet()
         self.lastModificationTime = time.ctime(os.path.getmtime(self.file))

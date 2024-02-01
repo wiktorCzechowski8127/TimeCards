@@ -1,1 +1,67 @@
 2024-01-31 23:10:01,010 ERROR at line 133 excel checkFileAndInitialize : File dosn't exist3_2024.xlsx
+2024-01-31 22:34:24,066 ERROR at line 429 excel inputTimestampIntoExcel : Invalid TokenId in 'HOURS' sheet
+2024-01-31 22:38:27,303 ERROR at line 429 excel inputTimestampIntoExcel : Invalid TokenId in 'HOURS' sheet
+2024-02-01 12:32:51,413 ERROR at line 133 excel checkFileAndInitialize : File dosn't exist: 2_2024.xlsx
+2024-02-01 12:33:49,871 ERROR at line 133 excel checkFileAndInitialize : File dosn't exist: 2_2024.xlsx
+2024-02-01 12:59:52,470 ERROR at line 133 excel checkFileAndInitialize : File dosn't exist: 2_2024.xlsx
+2024-02-01 13:00:20,802 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-01 08:00:00
+2024-02-01 13:00:21,324 ERROR at line 371 mfrc522Logger MFRC522_Read : Error while reading!
+2024-02-01 13:00:21,503 ERROR at line 371 mfrc522Logger MFRC522_Read : Error while reading!
+2024-02-01 13:00:23,110 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-01 08:30:00
+2024-02-01 13:00:23,631 ERROR at line 371 mfrc522Logger MFRC522_Read : Error while reading!
+2024-02-01 13:00:23,811 ERROR at line 371 mfrc522Logger MFRC522_Read : Error while reading!
+2024-02-01 13:00:25,242 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-01 09:15:00
+2024-02-01 13:00:25,755 ERROR at line 352 mfrc522Logger MFRC522_Auth : AUTH ERROR!!
+2024-02-01 13:00:25,758 ERROR at line 354 mfrc522Logger MFRC522_Auth : AUTH ERROR(status2reg & 0x08) != 0
+2024-02-01 13:00:29,465 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-01 10:15:00
+2024-02-01 13:00:31,745 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-01 10:45:00
+2024-02-01 13:00:38,220 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-01 12:30:00
+2024-02-01 13:00:58,475 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-01 17:30:00
+2024-02-01 13:01:00,507 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-01 18:00:00
+2024-02-01 13:01:02,645 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-01 18:30:00
+2024-02-01 13:01:07,318 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-01 19:45:00
+2024-02-01 13:01:07,504 ERROR at line 163 excel <module> : READED TOKENID: 922480807733 at time: 2024-02-01 19:45:00
+2024-02-01 13:01:07,690 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-01 19:45:00
+2024-02-01 13:01:07,882 ERROR at line 163 excel <module> : READED TOKENID: 922480807733 at time: 2024-02-01 19:45:00
+2024-02-01 13:01:08,267 ERROR at line 371 mfrc522Logger MFRC522_Read : Error while reading!
+2024-02-01 13:01:08,446 ERROR at line 371 mfrc522Logger MFRC522_Read : Error while reading!
+2024-02-01 13:01:08,449 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-01 19:45:00
+2024-02-01 13:01:32,905 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-02 03:00:00
+2024-02-01 13:01:33,426 ERROR at line 371 mfrc522Logger MFRC522_Read : Error while reading!
+2024-02-01 13:01:33,605 ERROR at line 371 mfrc522Logger MFRC522_Read : Error while reading!
+2024-02-01 13:01:36,440 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-02 04:00:00
+2024-02-01 13:01:38,565 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-02 04:30:00
+2024-02-01 13:01:40,784 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-02 05:00:00
+2024-02-01 13:01:42,894 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-02 05:30:00
+2024-02-01 13:01:47,659 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-02 06:45:00
+2024-02-01 13:01:49,034 ERROR at line 352 mfrc522Logger MFRC522_Auth : AUTH ERROR!!
+2024-02-01 13:01:49,038 ERROR at line 354 mfrc522Logger MFRC522_Auth : AUTH ERROR(status2reg & 0x08) != 0
+2024-02-01 13:01:53,263 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-02 08:15:00
+2024-02-01 13:01:57,156 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-02 09:00:00
+2024-02-01 13:01:59,474 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-02 09:45:00
+2024-02-01 13:02:01,929 ERROR at line 163 excel <module> : READED TOKENID: 922480807733 at time: 2024-02-02 10:15:00
+2024-02-01 13:03:37,681 ERROR at line 133 excel checkFileAndInitialize : File dosn't exist: 2_2024.xlsx
+2024-02-01 13:03:41,918 ERROR at line 163 excel <module> : READED TOKENID: 922480807733 at time: 2024-02-01 02:00:00
+2024-02-01 13:03:52,505 ERROR at line 163 excel <module> : READED TOKENID: 922480807733 at time: 2024-02-01 04:45:00
+2024-02-01 13:03:54,982 ERROR at line 163 excel <module> : READED TOKENID: 785558867627 at time: 2024-02-01 05:15:00
+2024-02-01 13:04:17,187 ERROR at line 163 excel <module> : READED TOKENID: 922480807733 at time: 2024-02-01 10:45:00
+2024-02-01 13:04:19,658 ERROR at line 163 excel <module> : READED TOKENID: 922480807733 at time: 2024-02-01 11:30:00
+2024-02-01 13:10:43,143 ERROR at line 133 excel checkFileAndInitialize : File dosn't exist: 2_2024.xlsx
+2024-02-01 13:58:55,848 ERROR at line 352 mfrc522Logger MFRC522_Auth : AUTH ERROR!!
+2024-02-01 13:58:55,865 ERROR at line 354 mfrc522Logger MFRC522_Auth : AUTH ERROR(status2reg & 0x08) != 0
+2024-02-01 14:50:21,821 ERROR at line 133 excel checkFileAndInitialize : File dosn't exist: 2_2024.xlsx
+2024-02-01 14:51:29,490 ERROR at line 163 excel printErrors : Trash data in row: 2
+2024-02-01 15:02:50,075 ERROR at line 163 excel printErrors : Trash data in row: 2
+2024-02-01 15:09:16,347 ERROR at line 163 excel printErrors : Trash data in row: 2
+2024-02-01 15:10:38,696 ERROR at line 163 excel printErrors : Trash data in row: 2
+2024-02-01 15:11:59,256 ERROR at line 163 excel printErrors : Trash data in row: 2
+2024-02-01 15:12:36,851 ERROR at line 163 excel printErrors : Trash data in row: 2
+2024-02-01 15:23:51,574 ERROR at line 163 excel printErrors : Trash data in row: 2
+2024-02-01 15:25:38,107 ERROR at line 163 excel printErrors : Trash data in row: 2
+2024-02-01 15:55:43,056 ERROR at line 133 excel checkFileAndInitialize : File dosn't exist: 2_2024.xlsx
+2024-02-01 18:23:27,729 ERROR at line 371 mfrc522Logger MFRC522_Read : Error while reading!
+2024-02-01 18:23:27,910 ERROR at line 371 mfrc522Logger MFRC522_Read : Error while reading!
+2024-02-01 18:23:33,817 ERROR at line 352 mfrc522Logger MFRC522_Auth : AUTH ERROR!!
+2024-02-01 18:23:34,223 ERROR at line 354 mfrc522Logger MFRC522_Auth : AUTH ERROR(status2reg & 0x08) != 0
+2024-02-01 23:14:49,641 ERROR at line 126 excel <module> : Program start running...
+2024-02-01 23:16:29,715 ERROR at line 126 excel <module> : Program start running...
