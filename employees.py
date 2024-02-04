@@ -5,24 +5,31 @@ Created on Thu Dec 28 20:45:07 2023
 
 @author: wiktor
 """
-
-
-
+##########################################################
+# Imports
+##########################################################
 from excel import *
 
+##########################################################
+# Define
+##########################################################
 WORKING_STATUS_ERROR = 1
 TRASH_ERROR = 2 
 CHANGE_TO_Z_ERROR = 3
 CHANGE_TO_T_OR_N_ERROR = 4
 AMMOUNT_OF_EMPLOYEES_ERROR = 5
 
+##########################################################
+# Class
+##########################################################
 class employeesC:
-    # -> Class declaration >---------------------------------------------------
+    # --------------------------------------------------------------------
+    # Class defines
     def __init__(self):
         self.employee = []
         self.ammountOfEmplotees = 0
         self.isClassFilledCorectly = False
-
+    
     class employeeDataC:
         def __init__(self, tokenid, name, rate, workingStatus):
             self.name = name
@@ -30,7 +37,8 @@ class employeesC:
             self.tokenId = tokenid
             self.workingStatus = workingStatus
 
-
+    # --------------------------------------------------------------------
+    # Functions
     def updateEmployeesStatus(self, xlsx):
 
         xlsx.checkFileAndInitialize()
@@ -122,7 +130,6 @@ class employeesC:
                         xlsx.paintRows(DATA, FIRST_DATA_ROW, AMMOUNT_OF_EMPLOYEES_COLUMN, WHITE_PATTERN)
                         self.ammountOfEmplotees = ammountOfWorkingEmployee
                         self. restoreErrors(xlsx, cellsReaded)
-                        print("Employee status update: suscess")
                         self.isClassFilledCorectly = True
                         
                     else:
@@ -209,7 +216,6 @@ class employeesC:
                                     ", len(self.employee): " + str(len(self.employee)))
 
         estimatedPotentialProblems = abs(cellsReaded - ammountOfWorkingEmployee)
-        print("Employee status update: Error, estimated potential problems: %d, searching for potential problem..." %(estimatedPotentialProblems))
         logger.error("Employee status update: Error, estimated potential problems: %d, searching for potential problem..." %(estimatedPotentialProblems))
         potentialProblems = 0
 
