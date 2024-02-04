@@ -77,10 +77,6 @@ def readingTokenLed():
 def blink(now, lastSecond, isSafeMode, signalLed):
     
     if(now.second != lastSecond):
-        tmptext = ''
-        if(isSafeMode):
-            tmptext = ' SafeMode enabled'
-        print(str(now) + tmptext)
         lastSecond = now.second
 
         if (isSafeMode):

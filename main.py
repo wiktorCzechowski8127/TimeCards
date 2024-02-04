@@ -61,7 +61,6 @@ def checkMonthAndFile(employees, exc, now, currentMonth, isSafeMode):
 
 def updateEmployees(employees, exc, now):
     gpio.excelProcessed()
-    print("Updating Employees")
     isSafeMode = True
     employeesAfterUpdate = employeesC()
     if(employeesAfterUpdate.updateEmployeesStatus(exc)):
