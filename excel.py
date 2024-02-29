@@ -16,6 +16,7 @@ import os
 #from employeesYaml import *
 from calendar import monthrange
 import datetime
+import time
 
 
 from freeDays import FREEDAYS
@@ -389,7 +390,33 @@ class excelSheetC:
     def updateAmmountOfEmployees(self, ammountOfEmplotees):
         self.workbook[DATA].cell(row=2, column=AMMOUNT_OF_EMPLOYEES_COLUMN).value = ammountOfEmplotees    
             
+    def inputTimestampIntoExcel(self, id, employeeId, currentTime):
+        employeeColumn = (2 * (employeeId + 1))
+        if (self.workbook[HOURS].cell(row=TITLE_ROW, column=(employeeColumn + 1)).value == id):
+            dateRow = currentTime.day + TITLE_ROW
+            print(dateRow)
+            columnDate = self.workbook[HOURS].cell(row=dateRow, column=1).value.strftime("%d:%m")
+            #d = currentTime.strftime("%d:%m")
+            if (columnDate == currentTime.strftime("%d:%m")):
+                tmp = self.workbook[HOURS].cell(row=dateRow, column=employeeColumn).value
+                if (tmp == None):
+                    self.workbook[HOURS].cell(row=dateRow, column=employeeColumn).value = currentTime
+                    self.workbook[HOURS].cell(row=dateRow, column=employeeColumn).number_format = 'h:mm'
 
+                    self.workbook[HOURS].cell(row=dateRow, column=(employeeColumn + 1)).value = currentTime
+                    self.workbook[HOURS].cell(row=dateRow, column=(employeeColumn + 1)).number_format = 'h:mm'
+                        #str(currentTime.strftime("%H:%M"))
+                else:
+                    self.workbook[HOURS].cell(row=dateRow, column=(employeeColumn + 1)).value = currentTime
+                    #self.workbook[HOURS].cell(row=dateRow, column=(employeeColumn + 1)).value = \
+                        #str(currentTime.strftime("%H:%M"))
+            self.saveSheet()
+            self.lastModificationTime = time.ctime(os.path.getmtime(self.file))
+        
+    def inputTokenIdToExce(self, id):
+        self.workbook[DATA].cell(row=3, column=WORKING_STATUS_COLUMN).value = id
+        #if (self.workbook[HOURS].cell(row=TITLE_ROW, column=).value ==
+        #    )
 
 
 

@@ -69,6 +69,8 @@ if __name__=="__main__":
 
     i = 0
     #updateEmployees(exc, now)
+    lastReadedId = 0
+    lastReadedTimeStamp = 0
 
     while(True):
         employees, exc, currentMonth, isSafeMode = \
@@ -83,7 +85,23 @@ if __name__=="__main__":
         if (isSafeMode):
             print("Safe mode enabled")
         else:
-            pass
+            print("RFID running")
+            id = 501 #reader.read_no_block()[0]
+            if ((id != None) and (id != lastReadedId)):
+                lastReadedTimeStamp = time.time()
+                lastReadedId = id
+                print("ID: %s" %(id))
+                employeeId = employees.checkReadedId(id)
+                if (employeeId != None):
+                    currentTime = datetime.datetime.now()
+                    exc.inputTimestampIntoExcel(id, employeeId, currentTime)
+                else:
+                    exc.inputTokenIdToExce(id)
+            #os.system('clear')
+            tmp = abs(time.time() - lastReadedTimeStamp)
+            print("LastReadedId: %s recieved %.2f seconds ago" % (hex(lastReadedId),tmp))
+            if (tmp > 2):
+                lastReadedId = 0
 
         #to delete   
         if(i == 3):

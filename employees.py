@@ -66,9 +66,9 @@ class employeesC:
                         else:
                             notValidCells += 1
                             xlsx.paintRows(DATA, cellRow, TOKEN_ID_COLUMN, RED_PATTERN, WORKING_STATUS_COLUMN)
-                            logger.error("Unknown employee working status. Cell: " + 
-                                         str(cellRow) + " workingStatusValue: " + 
-                                         workingStatusValue)
+                            #logger.error("Unknown employee working status. Cell: " + 
+                            #             str(cellRow) + " workingStatusValue: " + 
+                            #             workingStatusValue)
                             
                         cellsReaded += 1
                         cellRow += 1
@@ -164,4 +164,11 @@ class employeesC:
                 xlsx.updateAmmountOfEmployees(self.ammountOfEmplotees)
                 
 
-    
+    def checkReadedId(self, id):
+        isIdAssignedToEmployee = None
+        for i in range(0, self.ammountOfEmplotees):
+            if (id == self.employee[i].tokenId):
+                isIdAssignedToEmployee =  i
+                break
+        return isIdAssignedToEmployee
+                
