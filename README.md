@@ -16,7 +16,7 @@
     &emsp;G - Payment with advance payment and insurance deducted. <br />
     &emsp;H - Vacation days used. <br />
     &emsp;I - Employee status. Cell used to adding and deleting employees, more info in user manual. <br />
-    &emsp;J2 - Auto-generated control value that represent amount of employees. DO NOT CHANGE THIS VALUE <br />
+    &emsp;J2 - Auto-generated control value that represent amount of employees. DO NOT CHANGE THIS VALUE! <br />
     &emsp;J4 - Last read unknown token id. <br />
     &emsp;L - Month calendar with daily employee working time, Weekends and holidays are marked in yellow. <br />
     
@@ -25,7 +25,7 @@
 <h2>User manual:</h2>
 
 <h4> • Adding new employee:<br /></h4>
-&emsp;To add new employee you need to fill A, B, C columnd and, mark "Z" on I column and reopen file. After reopen file new columns on calendar in "DANE" and "GODZINY" sheet should be added, and employee working status should change to "T".
+&emsp;To add new employee you need to fill columns: A <i>(Token id)</i>, B <i>(Employee name)</i>, C <i>(salary)</i>, mark "Z" in I <i>(Employee status)</i> column and reopen file. After that new columns on calendar in "DANE" and "GODZINY" sheet should be added, and employee working status should change to "T".
 
 <h4> • Removing employee:<br /></h4>
 &emsp;To remove employee you need to change employee status to "N". This employee will be not included in the next month data sheet.
