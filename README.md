@@ -43,7 +43,7 @@
 &emsp;• Green LED blink in 1 second period - System work correctly, ready to reading token.<br/>
 &emsp;• Yellow LED blink in 1 second period - System work in SafeMode.<br/>
 &emsp;• Yellow light - System is busy, reading token in porgress.<br/>
-&emsp;• Yellow and green light: System is busy, data processing.<br/>
+&emsp;• Yellow and green light - System is busy, data processing.<br/>
 &emsp;• No light or constantly glowing light for longer than few seconds - undefined behavior.
 
 <h2>File access:</h2>
