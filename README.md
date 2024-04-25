@@ -24,28 +24,27 @@
   
 <h2>User manual:</h2>
 
-<h3> • Adding new employee:<br /></h3>
+<h4> • Adding new employee:<br /></h4>
 &emsp;To add new employee you need to fill A, B, C columnd and, mark "Z" on I column and reopen file. After reopen file new columns on calendar in "DANE" and "GODZINY" sheet should be added, and employee working status should change to "T".
 
-<h3> • Removing employee:<br /></h3>
+<h4> • Removing employee:<br /></h4>
 &emsp;To remove employee you need to change employee status to "N". This employee will be not included in the next month data sheet.
 
-<h3> • Changing employee data<br /></h3>
+<h4> • Changing employee data<br /></h4>
 &emsp;To change salary, vacation and advance payment simply change the value in the appropriate cell.
 
-<h2> • Safe mode<br /></h2>
-&emsp;When program detect error, system switch safe mode. When safe mode is on yellow led blink in 1 second period. Error information should be printed in <i>myapp.log</i>. If error containg wrong employee data, this data should be marked in red, additionally, a description of the error will be displayed under the employee data.
-When employee hits the token, entrance time and employee token id will be saved in <i>myapp.log</i>.
+<h2>Safe mode<br /></h2>
+<h4>&emsp;When program detect error system switch to safe mode.<br /></h4>
+&emsp;Operating in safe mode is signaled by yellow LED blinking in 1 second period. Error information should be printed in <i>myapp.log</i>. If error containg wrong employee data, this data should be marked in red, additionally, a description of the error will be displayed under the employee data. It's still passible to use token but only entrance time and employee token id will be saved in <i>myapp.log</i>.
 
-<h3> • <br /></h3>
+<h2>LEDs and sound:</h2>
+&emsp;• 2 short buzzer beeps - token read correctly.<br/>
+&emsp;• Long (2 second) buzzer beep - unknown tokenreaded, tokend id saved in J4 cell.<br/>
 
-<h2>Leds and sound:</h2>
-&emsp; 2 short buzzer beeps - token read correctly.
-&emsp; long (2 second) buzzer beep - unknown tokenreaded, tokend id saved in J4 cell.
-&emsp; Green led blink in 1 second period - System work correctly, ready to reading token.
-&emsp; Yellow led blink in 1 second period - System work SafeMode.
-&emsp; Yellow light, System is busy, not ready to read token. Yellow light shows for short time after reading token.
-&emsp; No light or constantly glowing light - undefined behavior.
+&emsp;• Green LED blink in 1 second period - System work correctly, ready to reading token.<br/>
+&emsp;• Yellow LED blink in 1 second period - System work SafeMode.<br/>
+&emsp;• Yellow light, System is busy, not ready to read token. Yellow light shows for short time after reading token.<br/>
+&emsp;• No light or constantly glowing light - undefined behavior.
 
 <h2>File access:</h2>
 &emsp;To access the .xslx file on other computers I suggest to share program directory via samba server.
