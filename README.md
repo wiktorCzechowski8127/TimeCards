@@ -1,5 +1,5 @@
 <h2>Overview: <br /></h2>
-&emsp;Working time registration system based on a Raspberry Pi Zero microcomputer and an RS522 RFID reader (13.56 MHz). The graphical interface is auto-generated .xslx files.
+&emsp;Working time registration system based on a Raspberry Pi Zero microcomputer and an RS522 RFID reader (13.56 MHz). The graphical interface is auto-generated .xlsx files.
 
 <h2>Gui:</h2>
 
@@ -47,7 +47,7 @@
 &emsp;• No light or constantly glowing light for longer than few seconds - undefined behavior.
 
 <h2>File access:</h2>
-&emsp;To access the .xslx file on other computers I suggest to share program directory via samba server.
+&emsp;To access the .xlsx file on other computers I suggest to share program directory via samba server.
 
 <h2>Electric diagram:</h2>
 
